@@ -1,0 +1,57 @@
+/* .root {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 720px;
+    background: url("./img/1.jpg") no-repeat center fixed;
+    background-size: cover;
+    background-color: rgba(216, 216, 216, 0.2);
+    position: relative;
+} */
+
+.title {
+    color: #08b9a9;
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+.khung {
+    width: 960px;
+    height: 500px;
+    border-radius: 25px;
+    position: fixed;
+    top: 120px;
+    background-color: rgb(240 254 255 / 72%);
+}
+
+.imageLeft {
+    width: 460px;
+    height: 100%;
+    float: left;
+}
+
+.card {
+    width: 500px;
+    height: 100%;
+    float: left;
+    border-radius: 0px 25px 25px 0px;
+}
+
+.tab {
+    flex-grow: 1;
+    border-radius: 0px 25px 0px 0px;
+    background-color: rgb(240 254 255 / 72%);
+}
+
+.link {
+    text-decoration: none;
+    color: #088b7e;
+}
+
+.link:hover {
+    color: #056f64;
+}
+
+.PrivateTabIndicator-colorPrimary-11 {
+    display: none;
+}
