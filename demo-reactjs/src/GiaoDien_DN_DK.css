@@ -39,8 +39,9 @@
 
 .tab {
     flex-grow: 1;
-    border-radius: 0px 25px 0px 0px;
+    border-radius: 0px 25px 25px 0px;
     background-color: rgb(240 254 255 / 72%);
+    height: 100%;
 }
 
 .link {
@@ -52,6 +53,14 @@
     color: #056f64;
 }
 
-.PrivateTabIndicator-colorPrimary-10 {
-    display: none;
+.MuiTabPanel-root {
+    padding: 0px;
+}
+
+.MuiTab-textColorPrimary.Mui-selected {
+    color: #089083 !important;
+}
+
+.PrivateTabIndicator-colorPrimary-3 {
+    background-color: #089083 !important;
 }

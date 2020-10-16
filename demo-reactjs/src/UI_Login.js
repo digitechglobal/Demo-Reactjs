@@ -25,6 +25,9 @@ const useStyle = makeStyles((theme) => ({
         '& a': {
             textDecoration: 'none',
         },
+    },
+    text: {
+        color: 'red',
     }
 }));
 
@@ -47,11 +50,14 @@ function Login() {
             '&:hover': {
                 backgroundColor: '#0AA295',
             },
+            '.MuiTextField-root': {
+                color: 'red',
+            }
         },
     }))(Button);
 
     return (
-        <Grid container style={{ backgroundColor: 'rgba(225, 230, 230, 1)', borderRadius: '0px 0px 25px 0px' }}>
+        <Grid container style={{ backgroundColor: 'rgba(225, 230, 230, 1)', borderRadius: '0px 25px 25px 0px', paddingTop: '50px', height: '100%' }}>
             <form className={classes.root} noValidate autoComplete="off">
                 <TextField
                     className={classes.text}

@@ -9,7 +9,9 @@ import Container from '@material-ui/core/Container';
 import { Grid } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Card from './UI_Card';
 import "./UI_Menu.css";
+import { container } from './theme';
 
 const useStyle = makeStyles({
     root: {
@@ -27,6 +29,18 @@ const useStyle = makeStyles({
         alignContent: 'center',
         fontSize: '14px',
 
+    },
+    btn: {
+        width: '150px',
+        height: '38px',
+        backgroundColor: '#ffffff',
+        color: '#707070',
+        marginTop: '20px',
+        '&:hover': {
+            backgroundColor: 'transparent',
+            border: 'solid 1px white',
+            color: 'white',
+        }
     }
 });
 
@@ -89,10 +103,10 @@ function Menu(props) {
                                         <Grid item xs={1}>
                                             <div className={classes.item}>Blog</div>
                                         </Grid>
-                                        <Grid item xs={1}>
+                                        <Grid item xs={2}>
                                             <div className={classes.item}>Contact</div>
                                         </Grid>
-                                        <Grid item xs={2}>
+                                        <Grid item xs={3}>
                                             <div className={classes.item}>Login/Resgister</div>
                                         </Grid>
                                     </Grid>
@@ -116,7 +130,7 @@ function Menu(props) {
                                     <Typography variant="h1" style={{ lineHeight: '60px' }}>Improved <br />Production level <br />with Robotics</Typography>
                                     <Typography variant="p" style={{ lineHeight: '70px', color: 'white', textTransform: 'uppercase', marginRight: '15px' }}>Everyone wants the innovation through robotics</Typography>
                                     <br />
-                                    <Button style={{ width: '150px', height: '38px', backgroundColor: '#ffffff', color: '#707070', marginTop: '20px' }} href="#"><Typography variant="p">View Details</Typography></Button>
+                                    <Button className={classes.btn} href="#"><Typography variant="p">View Details</Typography></Button>
                                 </div>
                             </Grid>
                             <Grid xs={12} sm={6} md={6} lg={6}>
@@ -129,9 +143,19 @@ function Menu(props) {
                 </Container>
             </div>
 
-            <div style={{ height: '200px', width: '100%', backgroundColor: 'cyan' }}>
-                <Container></Container>
-            </div>
+            <Container>
+                <Grid container style={{ marginLeft: '50px' }}>
+                    <Grid item xs={11}>
+                        <Grid container>
+                            <Grid item xs={12} sm={6} md={4} lg={3}><Card /></Grid>
+                            <Grid item xs={12} sm={6} md={4} lg={3}><Card /></Grid>
+                            <Grid item xs={12} sm={6} md={4} lg={3}><Card /></Grid>
+                            <Grid item xs={12} sm={6} md={4} lg={3}><Card /></Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={1}></Grid>
+                </Grid>
+            </Container>
             {/* endregion */}
 
 
