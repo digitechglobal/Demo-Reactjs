@@ -7,18 +7,16 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Container from '@material-ui/core/Container';
 import { Grid } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Card from './UI_Card';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import "./UI_Menu.css";
-import { container } from './theme';
+import SignUp from "./UI_SignUp";
+import Home from './UI_Home';
+import Footer from './UI_Footer';
 
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
     root: {
         backgroundColor: 'transparent',
         height: '65px',
-        // display: 'flex',
-        // justifyContent: 'center',
     },
 
     item: {
@@ -28,21 +26,10 @@ const useStyle = makeStyles({
         flexWrap: 'wrap',
         alignContent: 'center',
         fontSize: '14px',
-
+        textDecoration: 'none',
+        fontWeight: 'bold',
     },
-    btn: {
-        width: '150px',
-        height: '38px',
-        backgroundColor: '#ffffff',
-        color: '#707070',
-        marginTop: '20px',
-        '&:hover': {
-            backgroundColor: 'transparent',
-            border: 'solid 1px white',
-            color: 'white',
-        }
-    }
-});
+}));
 
 function ElevationScroll(props) {
     const { children, window } = props;
@@ -67,100 +54,74 @@ function Menu(props) {
 
     return (
         <React.Fragment>
-            <CssBaseline />
-            <ElevationScroll {...props}>
+            <BrowserRouter>
+
+                <CssBaseline />
                 {/* menu */}
-                <AppBar className={classes.root}>
-                    <Toolbar>
-                        <Container>
-                            <Grid container>
-                                <Grid item xs={6}>
-                                    <Grid container>
-                                        <Grid item xs={1}></Grid>
-                                        <Grid item xs={2} style={{ display: 'flex', alignItems: 'center' }}>
-                                            <img style={{ width: "50px", height: "50px", borderRadius: '50%' }} src="./logohufi.png" />
-                                        </Grid>
-                                        <Grid item xs={4} style={{ display: 'flex', alignItems: 'center', marginLeft: '-40px', fontSize: '20px' }}>
-                                            <h3>PRJNhoNho</h3>
-                                        </Grid>
-                                        <Grid item xs={7}></Grid>
-                                    </Grid>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <Grid container style={{ height: '100%' }}>
-                                        <Grid item xs={1}>
-                                            <div className={classes.item}>Home</div>
-                                        </Grid>
-                                        <Grid item xs={2}>
-                                            <div className={classes.item}>About us</div>
-                                        </Grid>
-                                        <Grid item xs={1}>
-                                            <div className={classes.item}>Service</div>
-                                        </Grid>
-                                        <Grid item xs={1}>
-                                            <div className={classes.item}>Product</div>
-                                        </Grid>
-                                        <Grid item xs={1}>
-                                            <div className={classes.item}>Blog</div>
-                                        </Grid>
-                                        <Grid item xs={2}>
-                                            <div className={classes.item}>Contact</div>
-                                        </Grid>
-                                        <Grid item xs={3}>
-                                            <div className={classes.item}>Login/Resgister</div>
+                <ElevationScroll {...props}>
+                    <AppBar className={classes.root}>
+                        <Toolbar>
+                            <Container>
+                                <Grid container>
+                                    <Grid item xs={6}>
+                                        <Grid container>
+                                            <Grid item xs={1}></Grid>
+                                            <Grid item xs={2} style={{ display: 'flex', alignItems: 'center' }}>
+                                                <img style={{ width: "50px", height: "50px", borderRadius: '50%' }} src="./logohufi.png" />
+                                            </Grid>
+                                            <Grid item xs={4} style={{ color: '#6717AF', display: 'flex', alignItems: 'center', marginLeft: '-40px', fontSize: '20px' }}>
+                                                <h3>PRJNhoNho</h3>
+                                            </Grid>
+                                            <Grid item xs={7}></Grid>
                                         </Grid>
                                     </Grid>
+                                    <Grid item xs={6}>
+                                        <Grid container style={{ height: '100%' }}>
+                                            <Grid item xs={1}>
+                                                <Link className={classes.item} to='/'>Home</Link>
+                                            </Grid>
+                                            <Grid item xs={2}>
+                                                <Link className={classes.item} to='#'>About us</Link>
+                                            </Grid>
+                                            <Grid item xs={2}>
+                                                <Link className={classes.item} to='#'>Service</Link>
+                                            </Grid>
+                                            <Grid item xs={1}>
+                                                <Link className={classes.item} to='#'>Product</Link>
+                                            </Grid>
+                                            <Grid item xs={1}>
+                                                <Link className={classes.item} to='#'>Blog</Link>
+                                            </Grid>
+                                            <Grid item xs={2}>
+                                                <Link className={classes.item} to='#'>Contact</Link>
+                                            </Grid>
+                                            <Grid item xs={2}>
+                                                <Link className={classes.item} to='/login'>Login/Resgister</Link>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
+                            </Container>
+                        </Toolbar>
+                    </AppBar>
+                </ElevationScroll>
+                <Toolbar />
+                {/* Endmenu */}
 
-                        </Container>
-                    </Toolbar>
-                </AppBar>
-                {/* endmenu */}
-            </ElevationScroll>
-            <Toolbar />
+                {/* Content */}
+                <div>
+                    <Switch>
+                        <Route exact path="/"><Home /></Route>
+                        <Route path="/login"><SignUp /></Route>
+                    </Switch>
+                </div>
+                <Footer />
 
-            {/* content */}
-            <div style={{ background: 'url("./img/banner-bg.jpg") no-repeat center center fixed', height: '720px', marginTop: '-65px' }}>
-                <Container >
-                    <div style={{ paddingTop: '10%' }}>
-                        <Grid container>
-                            <Grid item xs={12} sm={6} md={6} lg={6}>
-                                <div style={{ marginLeft: '50px' }}>
-                                    <Typography variant="h1" style={{ lineHeight: '60px' }}>Improved <br />Production level <br />with Robotics</Typography>
-                                    <Typography variant="p" style={{ lineHeight: '70px', color: 'white', textTransform: 'uppercase', marginRight: '15px' }}>Everyone wants the innovation through robotics</Typography>
-                                    <br />
-                                    <Button className={classes.btn} href="#"><Typography variant="p">View Details</Typography></Button>
-                                </div>
-                            </Grid>
-                            <Grid xs={12} sm={6} md={6} lg={6}>
-                                <div>
-                                    <img style={{ maxHeight: '100%', maxWidth: '100%' }} src="./img/banner-img.png" alt="banner-img.png"></img>
-                                </div>
-                            </Grid>
-                        </Grid>
-                    </div>
-                </Container>
-            </div>
-
-            <Container>
-                <Grid container style={{ marginLeft: '50px' }}>
-                    <Grid item xs={11}>
-                        <Grid container>
-                            <Grid item xs={12} sm={6} md={4} lg={3}><Card /></Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}><Card /></Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}><Card /></Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}><Card /></Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid item xs={1}></Grid>
-                </Grid>
-            </Container>
-            {/* endregion */}
-
-
+                {/* End Content */}
+            </BrowserRouter>
         </React.Fragment >
-    );
+
+    )
 }
 
 export default Menu;

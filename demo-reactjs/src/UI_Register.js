@@ -50,9 +50,9 @@ function Register() {
             marginLeft: '10px',
             width: '400px',
             color: theme.palette.getContrastText(blue[500]),
-            backgroundColor: '#08b9a9',
+            backgroundColor: '#8B76DB',
             '&:hover': {
-                backgroundColor: '#0AA295',
+                backgroundColor: '#BE94FF',
             },
         },
     }))(Button);

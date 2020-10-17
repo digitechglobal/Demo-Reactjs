@@ -1,7 +1,8 @@
 const styles = {
     root: {
         height: '720px',
-        background: "url('./img/1.jpg') no-repeat center fixed",
+        marginTop: '-65px',
+        background: "url('./img/banner-bg.jpg') no-repeat center fixed",
         backgroundSize: 'cover'
     }
 }

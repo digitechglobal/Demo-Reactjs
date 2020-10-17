@@ -3,16 +3,11 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import './GiaoDien_DN_DK.css';
 import Login from './UI_Login';
 import Register from './UI_Register';
 import styles from './styles';
-
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -49,9 +44,7 @@ const useStyles = makeStyles(() => ({
     ...styles
 }));
 
-const textColor = "red";
-
-function GiaoDien() {
+function SignUp() {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
@@ -60,27 +53,49 @@ function GiaoDien() {
     };
 
     return (
-
         <div className={classes.root}>
             <div style={{
                 height: '100%',
                 width: '100%',
                 backgroundColor: 'rgba(216, 216, 216, 0.5)',
                 display: 'flex',
+                justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'column',
-                position: 'relative',
             }}>
                 {/* Title */}
-                <div className="title">
+                {/* <div className="title">
                     <h1 style={{ margin: '0px' }}>SIGN IN FORM</h1>
-                </div>
+                    <div style={{ float: 'right', width: '50px', height: '50px', marginTop: '-100px', marginRight: '3%' }}>
+                        <Button type="button" onClick={handleOpen}>
+                            <CloseIcon style={{ fontSize: '60px' }} />
+                        </Button>
+                        <Modal
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="simple-modal-title"
+                            aria-describedby="simple-modal-description"
+                        >
+                            <Menu />
+                        </Modal>
+                        <Link path="/"><CloseIcon style={{ fontSize: '60px' }} /></Link>
+                    </div>
+                </div> */}
+
                 {/* end Title */}
 
                 <div className="khung">
                     {/* imgLeft */}
                     <div className="imageLeft">
-                        <img style={{ borderRadius: '25px 0px 0px 25px' }} src="./img/1.jpg" alt="background-UI-Login" width="100%" height="100%" />
+                        <div style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            width: '100%', height: '100%',
+                        }}>
+                            <img style={{ borderRadius: '25px 0px 0px 25px', transform: 'scaleX(-1)' }}
+                                src="./img/banner-img.png" alt="bg-image-left" width="90%" height="75%" />
+                        </div>
                     </div>
                     {/* end imgLeft */}
 
@@ -105,11 +120,6 @@ function GiaoDien() {
                                 <Register style={{ width: '100%', height: '100%' }} />
                             </TabPanel>
                         </Paper>
-                        {/* <Switch>
-                                <Route exact path="/"><Login /></Route>
-                                <Route path="/dangky"><Register /></Route>
-                            </Switch>
-                        </BrowserRouter> */}
                     </div>
                     {/* end tab nhap thong tin */}
                 </div>
@@ -118,4 +128,4 @@ function GiaoDien() {
     );
 }
 
-export default GiaoDien;
+export default SignUp;

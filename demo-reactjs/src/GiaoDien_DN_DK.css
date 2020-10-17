@@ -10,17 +10,17 @@
 } */
 
 .title {
-    color: #08b9a9;
+    color: #7706bec7;
     font-size: 32px;
     margin-top: 15px;
+    width: 100%;
+    text-align: center;
 }
 
 .khung {
     width: 960px;
     height: 500px;
     border-radius: 25px;
-    position: fixed;
-    top: 120px;
     background-color: rgb(240 254 255 / 72%);
 }
 
@@ -46,11 +46,11 @@
 
 .link {
     text-decoration: none;
-    color: #088b7e;
+    color: #8b76db;
 }
 
 .link:hover {
-    color: #056f64;
+    color: #8b76db;
 }
 
 .MuiTabPanel-root {
@@ -58,9 +58,9 @@
 }
 
 .MuiTab-textColorPrimary.Mui-selected {
-    color: #089083 !important;
+    color: #8b76db !important;
 }
 
 .PrivateTabIndicator-colorPrimary-3 {
-    background-color: #089083 !important;
+    background-color: #8b76db !important;
 }

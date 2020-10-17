@@ -14,9 +14,30 @@ const useStyles = makeStyles({
         maxWidth: 250,
         backgroundColor: '#F9F9FF',
     },
+
     media: {
         height: 230,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'white'
     },
+
+    title: {
+        lineHeight: '50px',
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: '18px'
+    },
+
+    btn: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        magrinTop: '-5x',
+        fontWeight: 'bold',
+        fontSize: '16px'
+    }
 });
 
 export default function MediaCard() {
@@ -25,20 +46,20 @@ export default function MediaCard() {
     return (
         <Card className={classes.root}>
             <CardActionArea>
-                <CardMedia style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}
+                <CardMedia
                     className={classes.media}
-                    title="The Upper Eyes"
+                    title="The Upper Eye"
                     component="div">
-                    <img src="./img/p1.png" width='45%' height='90%'></img>
+                    <img src="./img/p1.png" width='40%' height='80%'></img>
                 </CardMedia>
                 <CardContent>
-                    <Typography style={{ lineHeight: '50px', textAlign: 'center' }} gutterBottom variant="h5" component="h2">
+                    <Typography className={classes.title} gutterBottom variant="h5" component="h2">
                         The Upper Eyes</Typography>
                     <Typography style={{ textAlign: 'center' }} variant="body2" color="textSecondary" component="p">
                         Who are in extremely love with eco friendly system.</Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', magrinTop: '-5x' }}>
+            <CardActions className={classes.btn}>
                 <ButtonCus />
             </CardActions>
         </Card >
