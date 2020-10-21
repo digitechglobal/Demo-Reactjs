@@ -1,0 +1,19 @@
+.body {
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    background-size: cover;
+}
+.body1 {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.MuiTypography-h1 {
+    color: white;
+    font-size: 64px !important;
+    padding-top: 80px;
+    font-weight: 400;
+}
