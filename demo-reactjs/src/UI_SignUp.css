@@ -9,7 +9,7 @@
     position: relative;
 } */
 
-.title {
+.title_SignUp {
     color: #7706bec7;
     font-size: 32px;
     margin-top: 15px;
@@ -17,39 +17,39 @@
     text-align: center;
 }
 
-.khung {
+.khung_SignUp {
     width: 960px;
     height: 500px;
     border-radius: 25px;
     background-color: rgb(240 254 255 / 72%);
 }
 
-.imageLeft {
+.imageLeft_SignUp {
     width: 460px;
     height: 100%;
     float: left;
 }
 
-.card {
+.card_SignUp {
     width: 500px;
     height: 100%;
     float: left;
     border-radius: 0px 25px 25px 0px;
 }
 
-.tab {
+.tab_SignUp {
     flex-grow: 1;
     border-radius: 0px 25px 25px 0px;
     background-color: rgb(240 254 255 / 72%);
     height: 100%;
 }
 
-.link {
+.link_SignUp {
     text-decoration: none;
     color: #8b76db;
 }
 
-.link:hover {
+.link_SignUp:hover {
     color: #8b76db;
 }
 

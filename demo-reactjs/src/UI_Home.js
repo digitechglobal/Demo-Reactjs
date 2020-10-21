@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Card from './UI_Card';
 import "./UI_Menu.css";
+import Footer from './UI_Footer';
 import CardContent from './UI_CardContent';
 
 const useStyle = makeStyles((theme) => ({
@@ -62,10 +63,14 @@ export default function Home(props) {
                 <Grid container style={{ marginLeft: '50px' }}>
                     <Grid item xs={11}>
                         <Grid container>
-                            <Grid item xs={12} sm={6} md={4} lg={3}><Card /></Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}><Card /></Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}><Card /></Grid>
-                            <Grid item xs={12} sm={6} md={4} lg={3}><Card /></Grid>
+                            <Grid item xs={12} sm={6} md={4} lg={3}><Card imga="./img/p1.png" name="The Upper Eye" note="
+										Who are in extremely love with eco friendly system."/></Grid>
+                            <Grid item xs={12} sm={6} md={4} lg={3}><Card imga="./img/p2.png" name="The Crab Wheel" note="
+										Who are in extremely love with eco friendly system."/></Grid>
+                            <Grid item xs={12} sm={6} md={4} lg={3}><Card imga="./img/p3.png" name="The Plug Ninja" note="
+										Who are in extremely love with eco friendly system."/></Grid>
+                            <Grid item xs={12} sm={6} md={4} lg={3}><Card imga="./img/p4.png" name="The Controller" note="
+										Who are in extremely love with eco friendly system."/></Grid>
                         </Grid>
                     </Grid>
                     <Grid item xs={1}></Grid>
@@ -83,18 +88,19 @@ export default function Home(props) {
                     </Grid>
                     <Grid container style={{ marginLeft: '33px' }}>
                         <Grid item xs={11}>
-                            <CardContent />
+                            <CardContent title1="Expert Technicians" title2="Professional Service" title3="Great Support" />
                         </Grid>
                         <Grid item xs={1}></Grid>
                     </Grid>
                     <Grid container style={{ marginLeft: '33px', marginTop: '10px' }}>
                         <Grid item xs={11}>
-                            <CardContent />
+                            <CardContent title1="Technical Skills" title2="Highly Recomended" title3="Positive Reviews" />
                         </Grid>
                         <Grid item xs={1}></Grid>
                     </Grid>
                 </Container>
             </div>
+            <Footer />
             {/* endregion */}
         </div >
     );

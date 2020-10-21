@@ -20,11 +20,11 @@ const useStyles = makeStyles({
     },
 });
 
-export default function ButtonCus() {
+export default function ButtonCus(props) {
     const classes = useStyles();
     return (
         <Button className={classes.root} href="#">
-            <Typography variant="p">View Details</Typography>
+            <Typography variant="p">{props.content}</Typography>
         </Button>
     );
 } 

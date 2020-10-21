@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -7,11 +7,14 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Container from '@material-ui/core/Container';
 import { Grid } from '@material-ui/core';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import "./UI_Menu.css";
 import SignUp from "./UI_SignUp";
 import Home from './UI_Home';
-import Footer from './UI_Footer';
+import MenuAcc from './UI_MenuAccount';
+import Cookies from 'js-cookie';
+import Profile from './UI_Profile';
 
 const useStyle = makeStyles((theme) => ({
     root: {
@@ -51,6 +54,16 @@ ElevationScroll.propTypes = {
 
 function Menu(props) {
     const classes = useStyle();
+    // const [user, setUser] = useState();
+
+    let user2 = '';
+    user2 = Cookies.get('accessToken');
+    const pasrseUser = JSON.parse(user2);
+
+    // console.log("CustomizedMenus -> user2", user2);
+    // console.log("CustomizedMenus -> user2", pasrseUser.firstName);
+
+    const [valueChange, setValueChange] = React.useState();
 
     return (
         <React.Fragment>
@@ -64,16 +77,17 @@ function Menu(props) {
                             <Container>
                                 <Grid container>
                                     <Grid item xs={6}>
-                                        <Grid container>
+                                        <Link to='/' style={{ textDecoration: 'none' }}><Grid container>
                                             <Grid item xs={1}></Grid>
-                                            <Grid item xs={2} style={{ display: 'flex', alignItems: 'center' }}>
-                                                <img style={{ width: "50px", height: "50px", borderRadius: '50%' }} src="./logohufi.png" />
+                                            <Grid item xs={3} style={{ display: 'flex', alignItems: 'center' }}>
+                                                <img style={{ width: "100px", height: "50px" }} src="./logodigitech.png" />
                                             </Grid>
-                                            <Grid item xs={4} style={{ color: '#6717AF', display: 'flex', alignItems: 'center', marginLeft: '-40px', fontSize: '20px' }}>
+                                            <Grid item xs={4} style={{ color: '#6717AF', display: 'flex', alignItems: 'center', marginLeft: '-60px', marginTop: '20px', fontSize: '20px' }}>
                                                 <h3>PRJNhoNho</h3>
                                             </Grid>
                                             <Grid item xs={7}></Grid>
                                         </Grid>
+                                        </Link>
                                     </Grid>
                                     <Grid item xs={6}>
                                         <Grid container style={{ height: '100%' }}>
@@ -81,7 +95,7 @@ function Menu(props) {
                                                 <Link className={classes.item} to='/'>Home</Link>
                                             </Grid>
                                             <Grid item xs={2}>
-                                                <Link className={classes.item} to='#'>About us</Link>
+                                                <Link style={{ marginLeft: '20%' }} className={classes.item} to='#'>About us</Link>
                                             </Grid>
                                             <Grid item xs={2}>
                                                 <Link className={classes.item} to='#'>Service</Link>
@@ -90,13 +104,16 @@ function Menu(props) {
                                                 <Link className={classes.item} to='#'>Product</Link>
                                             </Grid>
                                             <Grid item xs={1}>
-                                                <Link className={classes.item} to='#'>Blog</Link>
+                                                <Link style={{ marginLeft: '45%' }} className={classes.item} to='#'>Blog</Link>
                                             </Grid>
                                             <Grid item xs={2}>
                                                 <Link className={classes.item} to='#'>Contact</Link>
                                             </Grid>
                                             <Grid item xs={2}>
-                                                <Link className={classes.item} to='/login'>Login/Resgister</Link>
+                                                {pasrseUser != null
+                                                    ? <MenuAcc user={pasrseUser} />
+                                                    : <Link className={classes.item} to='/login'>Login/Resgister</Link>
+                                                }
                                             </Grid>
                                         </Grid>
                                     </Grid>
@@ -112,11 +129,13 @@ function Menu(props) {
                 <div>
                     <Switch>
                         <Route exact path="/"><Home /></Route>
-                        <Route path="/login"><SignUp /></Route>
+                        <Route path="/login">
+                            {/* <SignUp setUser={setUser} /> */}
+                            <SignUp />
+                        </Route>
+                        <Route exact path="/profile"><Profile /></Route>
                     </Switch>
                 </div>
-                <Footer />
-
                 {/* End Content */}
             </BrowserRouter>
         </React.Fragment >

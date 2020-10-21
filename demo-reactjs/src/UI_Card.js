@@ -40,7 +40,7 @@ const useStyles = makeStyles({
     }
 });
 
-export default function MediaCard() {
+export default function MediaCard(props) {
     const classes = useStyles();
 
     return (
@@ -50,17 +50,17 @@ export default function MediaCard() {
                     className={classes.media}
                     title="The Upper Eye"
                     component="div">
-                    <img src="./img/p1.png" width='40%' height='80%'></img>
+                    <img src={props.imga} width='40%' height='80%'></img>
                 </CardMedia>
                 <CardContent>
                     <Typography className={classes.title} gutterBottom variant="h5" component="h2">
-                        The Upper Eyes</Typography>
+                        {props.name}</Typography>
                     <Typography style={{ textAlign: 'center' }} variant="body2" color="textSecondary" component="p">
-                        Who are in extremely love with eco friendly system.</Typography>
+                        {props.note}</Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions className={classes.btn}>
-                <ButtonCus />
+                <ButtonCus content='View Details' />
             </CardActions>
         </Card >
     );

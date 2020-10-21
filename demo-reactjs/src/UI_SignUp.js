@@ -4,7 +4,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import './GiaoDien_DN_DK.css';
+import './UI_SignUp.css';
 import Login from './UI_Login';
 import Register from './UI_Register';
 import styles from './styles';
@@ -44,7 +44,8 @@ const useStyles = makeStyles(() => ({
     ...styles
 }));
 
-function SignUp() {
+function SignUp(props) {
+    //const { setUser } = props;
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
@@ -63,46 +64,27 @@ function SignUp() {
                 alignItems: 'center',
                 flexDirection: 'column',
             }}>
-                {/* Title */}
-                {/* <div className="title">
-                    <h1 style={{ margin: '0px' }}>SIGN IN FORM</h1>
-                    <div style={{ float: 'right', width: '50px', height: '50px', marginTop: '-100px', marginRight: '3%' }}>
-                        <Button type="button" onClick={handleOpen}>
-                            <CloseIcon style={{ fontSize: '60px' }} />
-                        </Button>
-                        <Modal
-                            open={open}
-                            onClose={handleClose}
-                            aria-labelledby="simple-modal-title"
-                            aria-describedby="simple-modal-description"
-                        >
-                            <Menu />
-                        </Modal>
-                        <Link path="/"><CloseIcon style={{ fontSize: '60px' }} /></Link>
-                    </div>
-                </div> */}
-
                 {/* end Title */}
 
-                <div className="khung">
+                <div className="khung_SignUp">
                     {/* imgLeft */}
-                    <div className="imageLeft">
+                    <div className="imageLeft_SignUp">
                         <div style={{
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
                             width: '100%', height: '100%',
                         }}>
-                            <img style={{ borderRadius: '25px 0px 0px 25px', transform: 'scaleX(-1)' }}
-                                src="./img/banner-img.png" alt="bg-image-left" width="90%" height="75%" />
+                            <img style={{ borderRadius: '25px 0px 0px 25px', transform: 'scaleX(-1)', marginLeft: '30px' }}
+                                src="./img/banner-img.png" alt="bg-image-left" width="100%" height="75%" />
                         </div>
                     </div>
                     {/* end imgLeft */}
 
                     {/* Tab nhap thong tin */}
-                    <div className="card">
+                    <div className="card_SignUp">
                         {/* <BrowserRouter> */}
-                        <Paper className="tab" style={{ height: '100%', borderRadius: '0px 25px 25px 0px' }}>
+                        <Paper className="tab_SignUp" style={{ height: '100%', borderRadius: '0px 25px 25px 0px' }}>
                             <Tabs style={{ borderRadius: '0px 25px 0px 0px' }}
                                 value={value}
                                 onChange={handleChange}
@@ -114,6 +96,7 @@ function SignUp() {
                                 <Tab label="Đăng Ký" {...a11yProps(1)} />
                             </Tabs>
                             <TabPanel style={{ height: '100%', marginTop: '-48px' }} value={value} index={0}>
+                                {/* <Login setUser={setUser} style={{ backgroundColor: 'rgb(225, 230, 230)', borderRadius: '0px 25px 25px', height: '100%' }} /> */}
                                 <Login style={{ backgroundColor: 'rgb(225, 230, 230)', borderRadius: '0px 25px 25px', height: '100%' }} />
                             </TabPanel>
                             <TabPanel style={{ height: '100%', marginTop: '-48px' }} value={value} index={1}>

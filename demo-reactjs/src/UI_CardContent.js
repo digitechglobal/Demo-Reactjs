@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function CardContent() {
+export default function CardContent(props) {
     const classes = useStyles();
 
     return (
@@ -35,7 +35,7 @@ export default function CardContent() {
                 <Grid container className={classes.items}>
                     <Grid container>
                         <Grid item xs={2} style={{ display: 'flex', alignItems: 'center' }}><PersonIcon style={{ fontSize: '30px' }} /></Grid>
-                        <Grid item xs={10}><h3 style={{ marginLeft: '-20px', marginTop: '20px', display: 'flex', alignItems: 'center' }}>Expert Technicians</h3></Grid>
+                        <Grid item xs={10}><h3 style={{ marginLeft: '-20px', marginTop: '20px', display: 'flex', alignItems: 'center' }}>{props.title1}</h3></Grid>
                     </Grid>
                 </Grid>
                 <Grid container className={classes.items}>
@@ -46,7 +46,7 @@ export default function CardContent() {
                 <Grid container className={classes.items}>
                     <Grid container>
                         <Grid item xs={2} style={{ display: 'flex', alignItems: 'center' }}><AssignmentIcon style={{ fontSize: '30px' }} /></Grid>
-                        <Grid item xs={10}><h3 style={{ marginLeft: '-15px' }}>Expert Technicians</h3></Grid>
+                        <Grid item xs={10}><h3 style={{ marginLeft: '-15px' }}>{props.title2}</h3></Grid>
                     </Grid>
                 </Grid>
                 <Grid container className={classes.items}>
@@ -57,7 +57,7 @@ export default function CardContent() {
                 <Grid container className={classes.items}>
                     <Grid container>
                         <Grid item xs={2} style={{ display: 'flex', alignItems: 'center' }}><ContactPhoneIcon style={{ fontSize: '30px' }} /></Grid>
-                        <Grid item xs={10}><h3 style={{ marginLeft: '-15px' }}>Expert Technicians</h3></Grid>
+                        <Grid item xs={10}><h3 style={{ marginLeft: '-15px' }}>{props.title3}</h3></Grid>
                     </Grid>
                 </Grid>
                 <Grid container className={classes.items}>

@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -18,12 +19,27 @@ const useStyles = makeStyles((theme) => ({
             marginTop: '-6px',
         }
     },
+
+    link: {
+        color: 'white',
+        '&:hover': {
+            color: '#9046D6',
+            textDecoration: 'none',
+        }
+    }
 }));
 
 function Footer() {
     const classes = useStyles();
     return (
-        <div style={{ background: 'url("./img/footer-bg.jpg") no-repeat center center fixed', color: 'white', height: '500px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{
+            background: 'url("./img/footer-bg.jpg") no-repeat center center',
+            color: 'white',
+            height: '500px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+        }}>
             <Container style={{ marginLeft: '180px' }}>
                 <Grid container style={{ height: '100%' }}>
                     <Grid item xs={3}>
@@ -31,13 +47,13 @@ function Footer() {
                             <h3>Top Products</h3>
                         </div>
                         <div style={{ lineHeight: '30px' }}>
-                            <Typography variant="p"><Link to='#'>Managed Website</Link></Typography>
+                            <Typography variant="p"><Link to='#' className={classes.link}>Managed Website</Link></Typography>
                             <br />
-                            <Typography variant="p"><Link to='#'>Managed Raputation</Link></Typography>
+                            <Typography variant="p"><Link to='#' className={classes.link}>Managed Raputation</Link></Typography>
                             <br />
-                            <Typography variant="p"><Link to='#'>Power Tools</Link></Typography>
+                            <Typography variant="p"><Link to='#' className={classes.link}>Power Tools</Link></Typography>
                             <br />
-                            <Typography variant="p"><Link to='#'>Marketing Service</Link></Typography>
+                            <Typography variant="p"><Link to='#' className={classes.link}>Marketing Service</Link></Typography>
                         </div>
                     </Grid>
                     <Grid item xs={5} >
@@ -60,11 +76,12 @@ function Footer() {
                 </Grid>
                 <Grid container style={{ marginTop: '100px' }}>
                     <Grid item xs={8}>
-                        <Typography variant="p">Copyright &copy; 2020 All rights reserved | This is template design by <i>ntnt</i></Typography>
+                        <Typography variant="p">Copyright &copy; 2020 All rights reserved | This is template design by <i>*******</i></Typography>
                     </Grid>
                     <Grid item xs={4}>
                         <FacebookIcon style={{ fontSize: '40px', marginRight: '10px', marginTop: '-10px' }} />
                         <LinkedInIcon style={{ fontSize: '40px', marginRight: '10px', marginTop: '-10px' }} />
+                        <InstagramIcon style={{ fontSize: '40px', marginRight: '10px', marginTop: '-10px' }} />
                         <TwitterIcon style={{ fontSize: '40px', marginTop: '-10px' }} />
                     </Grid>
                 </Grid>
