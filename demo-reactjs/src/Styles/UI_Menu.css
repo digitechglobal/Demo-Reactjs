@@ -1,0 +1,16 @@
+.MuiTypography-h1 {
+    color: white;
+    font-size: 64px !important;
+    padding-top: 80px;
+    font-weight: 400;
+}
+
+.root {
+    background-color: transparent !important;
+    height: auto;
+}
+
+.scrollMenu {
+    background-image: linear-gradient(to left, #cd95ff, #8790ff);
+    height: auto;
+}
